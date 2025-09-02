@@ -2,19 +2,21 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#e91e63" />
   <title>💖 Para Jhoryina Briyidth - Con Amor de AnthZz</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
   <style>
+    /* Reset y base */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      touch-action: none;
+      touch-action: pan-y;
     }
 
     body {
-      background: linear-gradient(135deg, #fef0f5, #f9d9e8, #f5c0dd, #f0a7d2);
+      background: linear-gradient(135deg, #fff0f8, #fdd5e7, #fbbad6, #f9a0c5);
       color: #e91e63;
       font-family: 'Montserrat', sans-serif;
       overflow: hidden;
@@ -22,6 +24,8 @@
       width: 100vw;
       position: fixed;
       perspective: 3000px;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 16px;
     }
 
     /* === PANTALLA DE CARGA === */
@@ -48,7 +52,7 @@
     }
 
     .loading h1 {
-      font-size: 2.8rem;
+      font-size: clamp(2rem, 5vw, 2.8rem);
       margin-bottom: 10px;
       color: #e91e63;
       text-shadow: 0 0 10px rgba(255, 50, 100, 0.7);
@@ -56,7 +60,7 @@
     }
 
     .loading h2 {
-      font-size: 2.4rem;
+      font-size: clamp(1.8rem, 4.5vw, 2.4rem);
       margin-bottom: 15px;
       color: #c2185b;
       text-shadow: 0 0 8px rgba(255, 60, 120, 0.7);
@@ -64,35 +68,35 @@
     }
 
     .loading p {
-      font-size: 1.3rem;
+      font-size: clamp(1.1rem, 3.5vw, 1.3rem);
       color: #e91e63;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-style: italic;
       filter: saturate(1.2);
     }
 
     .loading .subtitle {
-      font-size: 1.4rem;
+      font-size: clamp(1.2rem, 4vw, 1.4rem);
       color: #9c27b0;
-      margin: 10px 0 35px;
+      margin: 10px 0 30px;
       font-weight: 500;
       filter: saturate(1.3);
     }
 
     .loading .credits-small {
       position: absolute;
-      bottom: 30px;
+      bottom: 25px;
       left: 50%;
       transform: translateX(-50%);
       font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 3vw, 1rem);
       color: #c2185b;
       opacity: 0.8;
       text-align: center;
       filter: saturate(1.2);
     }
 
-    /* Menú de tres rayas en carga */
+    /* Menú en carga */
     .menu-toggle-loading {
       position: absolute;
       top: 20px;
@@ -147,7 +151,7 @@
     }
 
     .progress-percent {
-      font-size: 2.4rem;
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
       color: #d81b60;
       margin-top: 15px;
       font-weight: bold;
@@ -289,16 +293,16 @@
       100% { transform: translateY(130vh); opacity: 0; }
     }
 
-    .char.small { font-size: 1.2rem; }
-    .char.medium { font-size: 1.6rem; }
-    .char.large { font-size: 2rem; }
+    .char.small { font-size: clamp(1rem, 3.5vw, 1.2rem); }
+    .char.medium { font-size: clamp(1.3rem, 4.5vw, 1.6rem); }
+    .char.large { font-size: clamp(1.6rem, 5.5vw, 2rem); }
 
     .char span {
       display: inline-block;
       color: transparent;
     }
 
-    /* Paleta de colores más saturada pero equilibrada */
+    /* Paleta de colores */
     .char span:nth-child(1)  { color: #ff1744; }
     .char span:nth-child(2)  { color: #f50057; }
     .char span:nth-child(3)  { color: #e040fb; }
@@ -315,19 +319,19 @@
     .char span:nth-child(14) { color: #ff8a65; }
     .char span:nth-child(15) { color: #ffffff; }
 
-    /* Carta central con más brillo */
+    /* Carta central */
     .floating-card {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) translateZ(100px);
-      width: 80%;
+      width: 85%;
       max-width: 600px;
-      min-height: 320px;
+      min-height: 300px;
       background: rgba(255, 255, 255, 0.35);
       backdrop-filter: blur(12px);
       border-radius: 26px;
-      padding: 35px;
+      padding: clamp(25px, 5vw, 35px);
       box-shadow: 
         0 12px 40px rgba(233, 30, 99, 0.3),
         0 0 30px rgba(255, 100, 180, 0.3) inset;
@@ -335,7 +339,7 @@
       color: #c2185b;
       text-align: center;
       font-family: 'Montserrat', sans-serif;
-      line-height: 1.9;
+      line-height: 1.8;
       z-index: 10;
       font-style: italic;
       filter: saturate(1.2) brightness(1.05);
@@ -343,19 +347,19 @@
 
     .floating-card h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
+      font-size: clamp(2rem, 5vw, 2.6rem);
       color: #d81b60;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       text-shadow: 0 0 6px rgba(255, 110, 136, 0.5);
     }
 
     .floating-card p {
-      font-size: 1.25rem;
+      font-size: clamp(1.1rem, 3.8vw, 1.25rem);
       color: #880e4f;
       margin-bottom: 15px;
     }
 
-    /* Menús 3D con más brillo */
+    /* Menús 3D */
     .menu-toggle {
       position: absolute;
       width: 40px;
@@ -410,7 +414,7 @@
 
     .menu-item {
       margin: 20px 0;
-      font-size: 1.2rem;
+      font-size: clamp(1.1rem, 4vw, 1.2rem);
       color: #d81b60;
       text-decoration: none;
       display: block;
@@ -435,7 +439,7 @@
       left: 50%;
       transform: translateX(-50%) translateZ(60px);
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.1rem;
+      font-size: clamp(0.9rem, 3.5vw, 1.1rem);
       color: #9c27b0;
       text-shadow: 0 0 6px rgba(255, 110, 136, 0.4);
       z-index: 10;
