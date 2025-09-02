@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#e91e63" />
-  <title>💖 Para Jhoryina Briyidth - Con Amor de AnthZz</title>
+  <title>💖 Para Jhoryina Briyidth</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
   <style>
-    /* Reset y base */
     * {
       margin: 0;
       padding: 0;
@@ -23,9 +22,8 @@
       height: 100vh;
       width: 100vw;
       position: fixed;
-      perspective: 3000px;
-      -webkit-tap-highlight-color: transparent;
-      font-size: 16px;
+      perspective: 2000px;
+      font-size: 14px;
     }
 
     /* === PANTALLA DE CARGA === */
@@ -35,11 +33,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, 
-        #fff0f8, 
-        #fdd5e7, 
-        #fbbad6, 
-        #f9a0c5);
+      background: linear-gradient(135deg, #fff0f8, #fdd5e7, #fbbad6, #f9a0c5);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -48,200 +42,156 @@
       color: #d81b60;
       font-family: 'Playfair Display', serif;
       text-align: center;
-      padding: 20px;
+      padding: 15px;
     }
 
     .loading h1 {
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      margin-bottom: 10px;
+      font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+      margin-bottom: 8px;
       color: #e91e63;
-      text-shadow: 0 0 10px rgba(255, 50, 100, 0.7);
-      filter: saturate(1.3) brightness(1.1);
+      text-shadow: 0 0 8px rgba(255, 50, 100, 0.6);
+      filter: saturate(1.3);
     }
 
     .loading h2 {
-      font-size: clamp(1.8rem, 4.5vw, 2.4rem);
-      margin-bottom: 15px;
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      margin-bottom: 12px;
       color: #c2185b;
-      text-shadow: 0 0 8px rgba(255, 60, 120, 0.7);
-      filter: saturate(1.25);
+      text-shadow: 0 0 6px rgba(255, 60, 120, 0.6);
     }
 
     .loading p {
-      font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
       color: #e91e63;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       font-style: italic;
-      filter: saturate(1.2);
     }
 
     .loading .subtitle {
-      font-size: clamp(1.2rem, 4vw, 1.4rem);
+      font-size: clamp(1rem, 3.2vw, 1.2rem);
       color: #9c27b0;
-      margin: 10px 0 30px;
+      margin: 8px 0 25px;
       font-weight: 500;
-      filter: saturate(1.3);
     }
 
     .loading .credits-small {
       position: absolute;
-      bottom: 25px;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(0.9rem, 3vw, 1rem);
+      font-size: clamp(0.8rem, 2.8vw, 0.9rem);
       color: #c2185b;
       opacity: 0.8;
       text-align: center;
-      filter: saturate(1.2);
     }
 
     /* Menú en carga */
     .menu-toggle-loading {
       position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 40px;
-      height: 30px;
+      top: 15px;
+      left: 15px;
+      width: 35px;
+      height: 26px;
       cursor: pointer;
       z-index: 2000;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 5px;
-      border-radius: 10px;
+      padding: 4px;
+      border-radius: 8px;
       background: rgba(233, 30, 99, 0.3);
-      box-shadow: 0 0 15px rgba(233, 30, 99, 0.6);
+      box-shadow: 0 0 12px rgba(233, 30, 99, 0.5);
     }
 
     .bar-loading {
-      height: 5px;
+      height: 4px;
       background: #e91e63;
-      border-radius: 3px;
-      box-shadow: 0 0 8px rgba(255, 50, 100, 0.8);
+      border-radius: 2px;
+      box-shadow: 0 0 6px rgba(255, 50, 100, 0.7);
     }
 
     /* Barra de corazón */
     .progress-container {
       position: relative;
-      width: 80%;
-      max-width: 400px;
-      height: 200px;
-      margin: 15px auto;
+      width: 75%;
+      max-width: 350px;
+      height: 140px;
+      margin: 12px auto;
     }
 
     .heart-path {
       fill: none;
       stroke: #ff1744;
-      stroke-width: 6;
+      stroke-width: 5;
       stroke-linecap: round;
-      filter: drop-shadow(0 0 10px rgba(255, 50, 100, 0.7));
+      filter: drop-shadow(0 0 8px rgba(255, 50, 100, 0.6));
     }
 
     .progress-dot {
       position: absolute;
-      width: 18px;
-      height: 18px;
+      width: 14px;
+      height: 14px;
       background: #ff1744;
-      border: 3px solid white;
+      border: 2px solid white;
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      box-shadow: 0 0 25px rgba(255, 50, 100, 1), 0 0 10px white;
+      box-shadow: 0 0 20px rgba(255, 50, 100, 0.9);
       z-index: 10;
     }
 
     .progress-percent {
-      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      font-size: clamp(1.4rem, 4.5vw, 1.9rem);
       color: #d81b60;
-      margin-top: 15px;
+      margin-top: 10px;
       font-weight: bold;
-      text-shadow: 0 0 6px rgba(255, 110, 136, 0.6);
-      filter: saturate(1.3) brightness(1.1);
+      text-shadow: 0 0 5px rgba(255, 110, 136, 0.5);
     }
 
-    /* === CORAZONES BRILLANTES FLotantes === */
+    /* Corazones flotantes */
     .glow-heart {
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 14px;
+      height: 14px;
       background: #ff1744;
       transform: rotate(45deg);
-      border-radius: 3px;
+      border-radius: 2px;
       z-index: 100;
       animation: float linear infinite;
       filter: brightness(1.4) saturate(1.6);
-      box-shadow: 
-        0 0 12px rgba(255, 50, 100, 0.9),
-        0 0 25px rgba(255, 80, 130, 0.7),
-        0 0 40px rgba(255, 100, 150, 0.5);
+      box-shadow: 0 0 10px rgba(255, 50, 100, 0.8);
     }
 
     .glow-heart::before,
     .glow-heart::after {
       content: '';
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 14px;
+      height: 14px;
       background: #ff1744;
       border-radius: 50%;
-      filter: brightness(1.5) saturate(1.7);
+      filter: brightness(1.5);
     }
 
-    .glow-heart::before {
-      left: -10px;
-      top: 0;
-    }
-
-    .glow-heart::after {
-      top: -10px;
-      left: 0;
-    }
+    .glow-heart::before { left: -7px; top: 0; }
+    .glow-heart::after { top: -7px; left: 0; }
 
     @keyframes float {
-      0% { transform: rotate(45deg) translateX(0) translateY(0); opacity: 0.7; }
-      50% { transform: rotate(45deg) translateX(25px) translateY(-20px); opacity: 1; }
-      100% { transform: rotate(45deg) translateX(0) translateY(0); opacity: 0.7; }
+      0% { transform: rotate(45deg) translateX(0) translateY(0); opacity: 0.6; }
+      50% { transform: rotate(45deg) translateX(15px) translateY(-12px); opacity: 1; }
+      100% { transform: rotate(45deg) translateX(0) translateY(0); opacity: 0.6; }
     }
 
-    /* Chispas grandes */
+    /* Chispas */
     .sparkle-big {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: #fff;
-      border-radius: 50%;
-      pointer-events: none;
-      animation: sparkle-big 1.8s ease-out forwards;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 1);
-      z-index: 1000;
+      width: 6px;
+      height: 6px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
     }
 
-    @keyframes sparkle-big {
-      0% { transform: scale(0); opacity: 0; }
-      20% { opacity: 1; }
-      100% { transform: scale(3.5) translateY(-50px) rotate(360deg); opacity: 0; }
-    }
-
-    /* Partículas pequeñas brillantes */
     .sparkle-small {
-      position: absolute;
-      width: 4.5px;
-      height: 4.5px;
-      background: #fff;
-      border-radius: 50%;
-      pointer-events: none;
-      animation: sparkle-small 2.4s ease-out forwards;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.95);
-      z-index: 999;
-    }
-
-    @keyframes sparkle-small {
-      0% { transform: scale(0); opacity: 0; }
-      30% { opacity: 1; }
-      100% { 
-        transform: scale(1.6) translate(var(--dx), var(--dy)) rotate(var(--rot)); 
-        opacity: 0; 
-      }
+      width: 3.5px;
+      height: 3.5px;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
     }
 
     /* === UNIVERSO 3D === */
@@ -250,7 +200,7 @@
       width: 100%;
       height: 100%;
       transform-style: preserve-3d;
-      transform: rotateX(15deg) rotateY(0deg);
+      transform: rotateX(10deg) rotateY(0deg);
       transition: transform 0.1s ease;
       opacity: 0;
       pointer-events: none;
@@ -262,40 +212,45 @@
       pointer-events: all;
     }
 
-    /* Lluvia DETRÁS y DELANTE */
-    .rain-back, .rain-front {
+    /* Lluvia DETRÁS de la carta */
+    .rain-back {
       position: absolute;
       width: 100%;
       height: 150vh;
       pointer-events: none;
+      z-index: 1;
     }
 
-    .rain-back { z-index: -2; }
-    .rain-front { z-index: 3; }
+    /* Lluvia DELANTE de la carta */
+    .rain-front {
+      position: absolute;
+      width: 100%;
+      height: 150vh;
+      pointer-events: none;
+      z-index: 4;
+    }
 
+    /* Texto cayendo */
     .char {
       position: absolute;
       font-family: 'Playfair Display', serif;
       white-space: pre;
-      opacity: 0.9;
+      opacity: 0.85;
       animation: fall linear infinite;
-      text-shadow: 
-        0 0 4px rgba(255, 50, 120, 0.6),
-        0 0 10px rgba(255, 80, 150, 0.5),
-        0 0 20px rgba(255, 100, 180, 0.4);
-      letter-spacing: 0.5px;
-      filter: saturate(1.3) brightness(1.1);
+      text-shadow: 0 0 3px rgba(255, 50, 120, 0.5);
+      letter-spacing: 0.3px;
+      filter: saturate(1.2);
     }
 
     @keyframes fall {
-      0% { transform: translateY(-100px); opacity: 0; }
+      0% { transform: translateY(-80px); opacity: 0; }
       10% { opacity: 1; }
-      100% { transform: translateY(130vh); opacity: 0; }
+      100% { transform: translateY(110vh); opacity: 0; }
     }
 
-    .char.small { font-size: clamp(1rem, 3.5vw, 1.2rem); }
-    .char.medium { font-size: clamp(1.3rem, 4.5vw, 1.6rem); }
-    .char.large { font-size: clamp(1.6rem, 5.5vw, 2rem); }
+    .char.small { font-size: clamp(0.8rem, 3vw, 1rem); }
+    .char.medium { font-size: clamp(1rem, 3.5vw, 1.2rem); }
+    .char.large { font-size: clamp(1.1rem, 4vw, 1.4rem); }
 
     .char span {
       display: inline-block;
@@ -319,93 +274,110 @@
     .char span:nth-child(14) { color: #ff8a65; }
     .char span:nth-child(15) { color: #ffffff; }
 
-    /* Carta central */
+    /* === CARTA BRILLANTE CON BORDES REDONDEADOS === */
     .floating-card {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) translateZ(100px);
       width: 85%;
-      max-width: 600px;
-      min-height: 300px;
-      background: rgba(255, 255, 255, 0.35);
-      backdrop-filter: blur(12px);
-      border-radius: 26px;
-      padding: clamp(25px, 5vw, 35px);
+      max-width: 500px;
+      min-height: 240px;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border-radius: 24px; /* esquinas redondeadas */
+      padding: 22px 20px;
       box-shadow: 
-        0 12px 40px rgba(233, 30, 99, 0.3),
-        0 0 30px rgba(255, 100, 180, 0.3) inset;
-      border: 1px solid rgba(233, 30, 99, 0.5);
+        0 0 20px rgba(233, 30, 99, 0.2),
+        0 0 30px rgba(255, 100, 180, 0.15) inset;
+      border: 2px solid rgba(233, 30, 99, 0.4);
+      /* Borde brillante */
+      outline: 2px solid rgba(233, 30, 99, 0.3);
+      outline-offset: 2px;
       color: #c2185b;
       text-align: center;
       font-family: 'Montserrat', sans-serif;
-      line-height: 1.8;
-      z-index: 10;
-      font-style: italic;
-      filter: saturate(1.2) brightness(1.05);
+      line-height: 1.6;
+      z-index: 3;
+      font-size: 0.95em;
+      overflow: hidden;
+    }
+
+    /* Efecto de brillo interno */
+    .floating-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(45deg, 
+        rgba(255, 180, 200, 0.1), 
+        rgba(255, 100, 180, 0.05), 
+        transparent);
+      pointer-events: none;
+      border-radius: 22px;
+      z-index: -1;
     }
 
     .floating-card h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 2.6rem);
+      font-size: clamp(1.4rem, 4.5vw, 1.8rem);
       color: #d81b60;
-      margin-bottom: 15px;
-      text-shadow: 0 0 6px rgba(255, 110, 136, 0.5);
+      margin-bottom: 12px;
+      text-shadow: 0 0 4px rgba(255, 110, 136, 0.4);
     }
 
     .floating-card p {
-      font-size: clamp(1.1rem, 3.8vw, 1.25rem);
+      font-size: clamp(0.9rem, 3.2vw, 1rem);
       color: #880e4f;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
-    /* Menús 3D */
+    /* Menús */
     .menu-toggle {
       position: absolute;
-      width: 40px;
-      height: 30px;
+      width: 35px;
+      height: 26px;
       cursor: pointer;
-      transform-style: preserve-3d;
       z-index: 20;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 5px;
-      border-radius: 10px;
+      padding: 4px;
+      border-radius: 8px;
       background: rgba(233, 30, 99, 0.25);
-      box-shadow: 0 0 12px rgba(233, 30, 99, 0.5);
+      box-shadow: 0 0 10px rgba(233, 30, 99, 0.4);
       opacity: 0;
       transition: opacity 0.5s ease;
     }
 
     .bar {
-      height: 5px;
+      height: 4px;
       background: #e91e63;
-      border-radius: 3px;
-      box-shadow: 0 0 6px rgba(255, 50, 100, 0.7);
+      border-radius: 2px;
+      box-shadow: 0 0 5px rgba(255, 50, 100, 0.6);
     }
 
-    #menuTopLeft { top: 20px; left: 20px; transform: translateZ(60px); }
-    #menuTopRight { top: 20px; right: 20px; transform: translateZ(60px); }
-    #menuBottomLeft { bottom: 20px; left: 20px; transform: translateZ(60px); }
-    #menuBottomRight { bottom: 20px; right: 20px; transform: translateZ(60px); }
+    #menuTopLeft { top: 15px; left: 15px; transform: translateZ(50px); }
+    #menuTopRight { top: 15px; right: 15px; transform: translateZ(50px); }
+    #menuBottomLeft { bottom: 15px; left: 15px; transform: translateZ(50px); }
+    #menuBottomRight { bottom: 15px; right: 15px; transform: translateZ(50px); }
 
     /* Menú desplegable */
     .menu {
       position: fixed;
       top: 0;
       right: -100%;
-      width: 80%;
-      max-width: 320px;
+      width: 75%;
+      max-width: 300px;
       height: 100vh;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(10px);
-      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
-      transform: translateZ(80px);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+      transform: translateZ(70px);
       transition: right 0.4s ease;
       z-index: 100;
-      padding: 80px 20px 20px;
-      border-radius: 20px 0 0 20px;
+      padding: 70px 15px 15px;
+      border-radius: 18px 0 0 18px;
     }
 
     .menu.open {
@@ -413,38 +385,34 @@
     }
 
     .menu-item {
-      margin: 20px 0;
-      font-size: clamp(1.1rem, 4vw, 1.2rem);
+      margin: 15px 0;
+      font-size: clamp(0.9rem, 3.5vw, 1.1rem);
       color: #d81b60;
       text-decoration: none;
       display: block;
       text-align: center;
-      padding: 12px;
-      border-radius: 12px;
-      background: rgba(233, 30, 99, 0.12);
+      padding: 10px;
+      border-radius: 10px;
+      background: rgba(233, 30, 99, 0.1);
       transition: 0.3s;
-      filter: saturate(1.2);
     }
 
     .menu-item:hover {
-      background: rgba(233, 30, 99, 0.25);
-      transform: scale(1.08);
-      box-shadow: 0 0 10px rgba(233, 30, 99, 0.3);
+      background: rgba(233, 30, 99, 0.2);
+      transform: scale(1.05);
     }
 
     /* Créditos */
     .credits {
       position: absolute;
-      bottom: 20px;
+      bottom: 15px;
       left: 50%;
-      transform: translateX(-50%) translateZ(60px);
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+      transform: translateX(-50%) translateZ(50px);
+      font-size: clamp(0.8rem, 3vw, 0.95rem);
       color: #9c27b0;
-      text-shadow: 0 0 6px rgba(255, 110, 136, 0.4);
+      text-shadow: 0 0 4px rgba(255, 110, 136, 0.3);
       z-index: 10;
       text-align: center;
-      filter: saturate(1.2);
     }
   </style>
 </head>
@@ -462,12 +430,12 @@
 
     <h1>Para Jhoryina Briyidth 💖</h1>
     <h2>💗 Cargando tu universo de amor</h2>
-    <p>Un detalle hecho con el corazón, solo para ti</p>
+    <p>Un detalle hecho con el corazón</p>
     <div class="subtitle">De parte de: AnthZz Berrocal</div>
 
     <div class="progress-container">
-      <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-        <path class="heart-path" d="M200,180 C150,140 80,120 40,80 C0,40 20,0 60,0 C100,0 130,30 160,60 C180,40 220,40 240,60 C270,30 300,0 340,0 C380,0 400,40 360,80 C320,120 250,140 200,180 Z" />
+      <svg width="350" height="140" viewBox="0 0 350 140" xmlns="http://www.w3.org/2000/svg">
+        <path class="heart-path" d="M175,140 C130,110 60,90 20,50 C0,20 15,0 50,0 C85,0 110,25 135,50 C155,30 185,30 205,50 C235,25 260,0 295,0 C335,0 350,20 310,50 C260,90 190,110 175,140 Z" />
       </svg>
       <div class="progress-dot" id="dot"></div>
     </div>
@@ -482,23 +450,22 @@
   <!-- === UNIVERSO 3D === -->
   <div id="universe">
     
-    <!-- Lluvia detrás -->
+    <!-- Lluvia detrás de la carta -->
     <div class="rain-back" id="rainBack"></div>
 
-    <!-- Lluvia delante -->
+    <!-- Lluvia delante de la carta -->
     <div class="rain-front" id="rainFront"></div>
 
-    <!-- Carta -->
+    <!-- === CARTA BRILLANTE CON BORDES REDONDEADOS === -->
     <div class="floating-card">
       <h2>Para mi Amor, Jhoryina 💖</h2>
-      <p>Te amo con todo mi corazón, más de lo que las palabras pueden expresar. Eres mi paz, mi alegría, mi razón para sonreír cada día.</p>
-      <p>Eres especial, única, hermosa por dentro y por fuera. Cada momento contigo es un regalo que atesoro en mi alma.</p>
-      <p>No hay nada que desee más que verte feliz, saber que estás bien, y poder amarte cada segundo de mi vida.</p>
-      <p>Sin darte cuenta, llenas mis días de luz, mis noches de calma, y mi corazón de amor verdadero.</p>
-      <p>Jhoryina, te amo más que a la vida misma. Y si el universo entero se apagara, mi amor por ti seguiría brillando.</p>
+      <p>Te amo con todo mi corazón, más de lo que las palabras pueden expresar.</p>
+      <p>Eres especial, hermosa, y cada día contigo es un regalo que guardo en el alma.</p>
+      <p>Sin darte cuenta, llenas mis días de luz y mi corazón de paz.</p>
+      <p>Jhoryina, te amo más que a la vida misma.</p>
     </div>
 
-    <!-- 4 Menús 3D -->
+    <!-- 4 Menús -->
     <div class="menu-toggle" id="menuTopLeft">
       <div class="bar"></div>
       <div class="bar"></div>
@@ -532,8 +499,7 @@
 
     <!-- Créditos -->
     <div class="credits">
-      By AnthZz Berrocal - BerMatMods<br>
-      <small>Proyecto Vip💖</small>
+      By AnthZz Berrocal - BerMatMods
     </div>
   </div>
 
@@ -569,56 +535,52 @@
       }
     }, 60);
 
-    // === CORAZONES BRILLANTES FLotantes ===
-    for (let i = 0; i < 22; i++) {
+    // === CORAZONES FLotantes ===
+    for (let i = 0; i < 18; i++) {
       const heart = document.createElement('div');
       heart.className = 'glow-heart';
       heart.style.left = Math.random() * 100 + 'vw';
       heart.style.top = Math.random() * 100 + 'vh';
-      heart.style.animationDuration = (3 + Math.random() * 3.5) + 's';
-      heart.style.animationDelay = Math.random() * 6 + 's';
+      heart.style.animationDuration = (2.5 + Math.random() * 2.5) + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
       loader.appendChild(heart);
     }
 
-    // === EXPLOSIONES DE CHISPAS ===
+    // === EXPLOSIONES ===
     function createExplosion() {
       const x = Math.random() * 100;
       const y = Math.random() * 100;
-
-      for (let i = 0; i < 14; i++) {
+      for (let i = 0; i < 10; i++) {
         const big = document.createElement('div');
         big.className = 'sparkle-big';
         big.style.left = x + '%';
         big.style.top = y + '%';
         loader.appendChild(big);
-        setTimeout(() => big.remove(), 1800);
+        setTimeout(() => big.remove(), 1600);
 
-        for (let j = 0; j < 10; j++) {
+        for (let j = 0; j < 6; j++) {
           const small = document.createElement('div');
           small.className = 'sparkle-small';
           small.style.left = x + '%';
           small.style.top = y + '%';
-
           const angle = Math.random() * 360;
-          const dist = 70 + Math.random() * 140;
+          const dist = 40 + Math.random() * 80;
           const dx = Math.cos(angle * Math.PI / 180) * dist;
           const dy = Math.sin(angle * Math.PI / 180) * dist;
-
           small.style.setProperty('--dx', dx + 'px');
           small.style.setProperty('--dy', dy + 'px');
           small.style.setProperty('--rot', (Math.random() * 360) + 'deg');
-          small.style.animationDuration = (2 + Math.random() * 1.4) + 's';
-
+          small.style.animationDuration = (1.5 + Math.random() * 0.8) + 's';
           loader.appendChild(small);
-          setTimeout(() => small.remove(), 2400);
+          setTimeout(() => small.remove(), 1800);
         }
       }
     }
 
-    setInterval(createExplosion, 1200);
-    setTimeout(createExplosion, 500);
+    setInterval(createExplosion, 1000);
+    setTimeout(createExplosion, 400);
 
-    // === LLUVIA ROMÁNTICA ===
+    // === LLUVIA DE TEXTO (más densa) ===
     const romanticLines = [
       "Te amo con cada latido",
       "Eres mi persona especial",
@@ -627,7 +589,14 @@
       "Eres hermosa por dentro",
       "Mi amor no tiene límites",
       "Gracias por ser mi paz",
-      "Contigo me siento en casa"
+      "Contigo me siento en casa",
+      "Eres mi razón para sonreír",
+      "Te amo más de lo que imaginas",
+      "Eres única, como ninguna otra",
+      "Mi vida cambió cuando llegaste",
+      "Eres mi eternidad",
+      "Te amo más que a la vida misma",
+      "Eres mi amor, mi amiga, mi todo"
     ];
 
     function createStyledText(text) {
@@ -646,19 +615,18 @@
       char.className = `char ${['small', 'medium', 'large'][Math.floor(Math.random() * 3)]}`;
       const randomLine = romanticLines[Math.floor(Math.random() * romanticLines.length)];
       char.innerHTML = createStyledText(randomLine);
-
       char.style.left = Math.random() * 95 + '%';
-      char.style.opacity = isFront ? 0.65 : 0.9;
-      char.style.animationDuration = (Math.random() * 8 + 8) + 's';
+      char.style.opacity = isFront ? 0.6 : 0.85;
+      char.style.animationDuration = (Math.random() * 6 + 5) + 's';
       container.appendChild(char);
-
-      setTimeout(() => char.remove(), 10000);
+      setTimeout(() => char.remove(), 7000);
     };
 
-    setInterval(() => createRainDrop(rainBack), 170);
-    setInterval(() => createRainDrop(rainFront, true), 380);
+    // Más densidad = más lluvia
+    setInterval(() => createRainDrop(rainBack), 120);
+    setInterval(() => createRainDrop(rainFront, true), 120);
 
-    // === MENÚS: aparecen al acercarse a esquinas ===
+    // === MENÚS ===
     const menus = [
       document.getElementById('menuTopLeft'),
       document.getElementById('menuTopRight'),
@@ -666,35 +634,7 @@
       document.getElementById('menuBottomRight')
     ];
 
-    document.addEventListener('mousemove', (e) => {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-      const buffer = 60;
-
-      menus[0].style.opacity = (e.clientX < buffer && e.clientY < buffer) ? '1' : '0';
-      menus[1].style.opacity = (e.clientX > w - buffer && e.clientY < buffer) ? '1' : '0';
-      menus[2].style.opacity = (e.clientX < buffer && e.clientY > h - buffer) ? '1' : '0';
-      menus[3].style.opacity = (e.clientX > w - buffer && e.clientY > h - buffer) ? '1' : '0';
-    });
-
-    document.addEventListener('touchstart', (e) => {
-      const x = e.touches[0].clientX;
-      const y = e.touches[0].clientY;
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-      const buffer = 80;
-
-      menus.forEach(m => m.style.opacity = '0');
-
-      if (x < buffer && y < buffer) menus[0].style.opacity = '1';
-      if (x > w - buffer && y < buffer) menus[1].style.opacity = '1';
-      if (x < buffer && y > h - buffer) menus[2].style.opacity = '1';
-      if (x > w - buffer && y > h - buffer) menus[3].style.opacity = '1';
-    });
-
-    // Función compartida para abrir menú
     const openMenu = () => document.getElementById('menu').classList.toggle('open');
-
     document.getElementById('menuTopLeftLoading').addEventListener('click', openMenu);
     menus.forEach(menu => menu.addEventListener('click', openMenu));
 
@@ -705,15 +645,15 @@
       }
     });
 
-    // ROTACIÓN 3D
-    let rotX = 15, rotY = 0;
+    // === ROTACIÓN 3D ===
+    let rotX = 10, rotY = 0;
     let isDragging = false;
     let startX, startY;
 
     const handleMove = (dx, dy) => {
       if (isDragging) {
-        rotY += dx * 0.6;
-        rotX -= dy * 0.6;
+        rotY += dx * 0.5;
+        rotX -= dy * 0.5;
         document.getElementById('universe').style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
       }
     };
